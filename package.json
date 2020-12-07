@@ -1,0 +1,26 @@
+{
+  "name": "eth-key-vault",
+  "version": "1.0.0",
+  "description": "Key Management System for Ethereum P-256K Private Keys using Azure Key Vaults",
+  "main": "index.js",
+  "bin": {
+    "eth-key-vault": "index.js",
+    "eth-key-vault-cli": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuantSoldier/eth-key-vault"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "QuantSoldier <quantsoldier@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@azure/identity": "^1.2.0",
+    "@azure/keyvault-keys": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "key-encoder": "^2.0.3",
+    "secp256k1": "^4.0.2"
+  }
+}

@@ -32,8 +32,8 @@ In order to use this package, you must have an active Azure Account Subscription
   - Portal Setup: https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal  
   - CLI Setup: https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-cli   
 
-3. Add an IAM role and access policy to the Key Vault to allow your application to perform the necessary *Secrets* and *Keys* operations.
-  - Client Secret: https://docs.microsoft.com/en-us/azure/key-vault/general/assign-access-policy-portal
+3. Add an Access Policy to the Key Vault to allow your application to perform the necessary *Secrets* and *Keys* operations. You can also use IAM to set up Role-Based access instead.
+  - Access Policy: https://docs.microsoft.com/en-us/azure/key-vault/general/assign-access-policy-portal
   - Role-Based: https://docs.microsoft.com/en-us/azure/key-vault/general/rbac-guide
 
 
@@ -57,13 +57,20 @@ az login
 
 3. Configure the necessary environment variables by running the commands below with your information:
 ```
+# Windows
+set AZURE_CLIENT_ID="<azure-client-id>"
+set AZURE_CLIENT_SECRET="<azure-client-secret>"
+set AZURE_TENANT_ID="<azure-tenant-id>"
+set AZURE_KEY_VAULT="<azure-key-vault-https-endpoint>"
+
+# Mac / Linux
 export AZURE_CLIENT_ID="<azure-client-id>"
 export AZURE_CLIENT_SECRET="<azure-client-secret>"
 export AZURE_TENANT_ID="<azure-tenant-id>"
 export AZURE_KEY_VAULT="<azure-key-vault-https-endpoint>"
 ```
 
-4. Run the CLI command to start the app. You will be prompted to sign into Azure if you are not authenticated.
+4. Run the CLI command to start the app.
 ```
 eth-key-vault-cli
 ```
@@ -80,11 +87,8 @@ yarn add eth-key-vault
 az login
 ```
 
-3. Install `dotenv` and create a `.env` file at the root of your project with authentication variables required by Azure and the target key vault. Add the following variables to your current `.env` file if you already use `dotenv`.
+3. Create a `.env` file at the root of your project with authentication variables required by Azure and the https endpoint of the target key vault. Add the following variables to your current `.env` file if you already use `dotenv`.
 ```
-# Installing dotenv
-npm install dotenv
-
 # .env
 AZURE_CLIENT_ID=<azure-client-id>
 AZURE_CLIENT_SECRET=<azure-client-secret>

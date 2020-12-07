@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
+const { storeKey } = require('./lib/api')
+
 const main = async () => {
-  console.log('hi')
+  console.log("CLI not available yet")
 }
 
 main()

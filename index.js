@@ -1,4 +1,13 @@
-export {
+const { 
   storeKey,
-  retrieveKey
-} from './lib/api'
+  retrieveKey,
+  storeVaultKey,
+  retrieveVaultKey
+} = require('./lib/api')
+
+module.exports = {
+  storeKey,
+  retrieveKey,
+  storeVaultKey,
+  retrieveVaultKey
+}

@@ -1,12 +1,11 @@
 # Ethereum Key Vault
 
 ```
-   ______  __     __ __           _   __          ____ 
-  / __/ /_/ /    / //_/__ __ __  | | / /__ ___ __/ / /_
- / _// __/ _ \  / ,< / -_) // /  | |/ / _ `/ // / / __/
-/___/\__/_//_/ /_/|_|\__/\_, /   |___/\_,_/\_,_/_/\__/ 
-                        /___/                          
-
+       ______  __     __ __           _   __          ____ 
+      / __/ /_/ /    / //_/__ __ __  | | / /__ ___ __/ / /_
+     / _// __/ _ \  / ,< / -_) // /  | |/ / _ `/ // / / __/
+    /___/\__/_//_/ /_/|_|\__/\_, /   |___/\_,_/\_,_/_/\__/ 
+                            /___/                          
 ```
 
 This package provides a Key Management System (KMS) for Ethereum P-256K Private Keys using the [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview) service. Azure Key Vaults allow you to store cryptographic keys and secrets for usage in your applications, simplifying the key request and retrieval process.
@@ -28,9 +27,11 @@ This package provides functionality to store Ethereum Private Keys in an Azure K
 In order to use this package, you must have an active Azure Account Subscription and Key Vault set up. Refer to the below steps to get everything set up:
 
 1. Sign up for a free Azure Account: https://azure.microsoft.com/en-ca/free/   
+
 2. Setup an Azure Key Vault in your Microsoft Azure account.  
   - Portal Setup: https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal  
   - CLI Setup: https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-cli   
+
 3. Add an IAM role and access policy to the Key Vault to allow your application to perform the necessary *Secrets* and *Keys* operations.
   - Client Secret: https://docs.microsoft.com/en-us/azure/key-vault/general/assign-access-policy-portal
   - Role-Based: https://docs.microsoft.com/en-us/azure/key-vault/general/rbac-guide
@@ -74,7 +75,12 @@ npm install eth-key-vault
 yarn add eth-key-vault
 ```
 
-2. Install `dotenv` and create a `.env` file at the root of your project with authentication variables required by Azure and the target key vault. Add the following variables to your current `.env` file if you already use `dotenv`.
+2. Authenticate with Azure
+```
+az login
+```
+
+3. Install `dotenv` and create a `.env` file at the root of your project with authentication variables required by Azure and the target key vault. Add the following variables to your current `.env` file if you already use `dotenv`.
 ```
 # Installing dotenv
 npm install dotenv
@@ -96,6 +102,7 @@ console.log(address)  // "0x5248cC93d9bD1C12dfB8De81d14D63e55ade0420"
 const privateKey = await retrieveKey(ETH_ADDRESS)
 console.log(privateKey)  // "f5213e8a24a403782dc8ecab26ac639cb7b4396215c80b1d7fa71b37b24e830d"
 const wallet = new ethers.Wallet(privateKey)
+...
 ```
 
 

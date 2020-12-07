@@ -1,6 +1,6 @@
 {
   "name": "eth-key-vault",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Key Management System for Ethereum P-256K Private Keys using Azure Key Vaults",
   "main": "index.js",
   "bin": {
@@ -20,11 +20,10 @@
     "@azure/identity": "^1.2.0",
     "@azure/keyvault-keys": "^4.1.0",
     "@azure/keyvault-secrets": "^4.1.0",
+    "dotenv": "^8.2.0",
     "keccak": "^3.0.1",
     "key-encoder": "^2.0.3",
+    "mocha": "^8.2.1",
     "secp256k1": "^4.0.2"
-  },
-  "devDependencies": {
-    "dotenv": "^8.2.0"
   }
 }
